@@ -7,6 +7,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
+   
 }
 
 h1{
@@ -33,9 +34,11 @@ h6 {
     font-size: 1em;
 }
 
-p {
-    padding: 0px 0px 10px 0px;
+p, h1, h2 {
+    padding: 10px;
 }
+
+
 
 /* button, primary button, form button, cancel button */
 /* a  */
