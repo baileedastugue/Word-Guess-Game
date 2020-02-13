@@ -3,6 +3,7 @@
     var correctWord = document.getElementById("correct-word");
     var guessesLeft = document.getElementById("guesses-left");
     var wordsGuessed = document.getElementById("words-guessed");
+    var notInWord = document.getElementById("not-in-word");
     
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix"];
@@ -43,7 +44,7 @@
         }
         if (wordArray.indexOf(userGuess) == -1) {
             incrorrectArray.push(userGuess);
-            console.log("Incorrect guesses: " + incrorrectArray);
+            notInWord.textContent = "Letters that do not appear in the word: " + incrorrectArray.join(", ");
             chancesLeft--;
             guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
            
