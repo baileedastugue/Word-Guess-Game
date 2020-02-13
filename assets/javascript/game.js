@@ -1,6 +1,8 @@
     // HTML references
     var directions = document.getElementById("directions");
     var correctWord = document.getElementById("correct-word");
+    var guessesLeft = document.getElementById("guesses-left");
+    // var correctWord = document.getElementById("correct-word");
     
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix"];
@@ -39,7 +41,7 @@
         for (var i = 0; i < wordLength; i++){
             if (userGuess ===  wordArray[i]) {
                 underscoreArray[i] = wordArray[i];
-                console.log("Chances left to save chicken little: " + chancesLeft);
+                chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
             }
         }
         if (wordArray.indexOf(userGuess) == -1) {
@@ -48,7 +50,7 @@
             incrorrectArray.push(userGuess);
             console.log("Incorrect guesses: " + incrorrectArray);
             chancesLeft--;
-            console.log("Chances left to save chicken little: " + chancesLeft);
+            guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
            
         }
         var strArray = underscoreArray.join(" ");
