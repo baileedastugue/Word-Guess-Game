@@ -25,17 +25,21 @@
 
     var wordArray = Array.from(thisWord);
     var underscoreArray = Array.from(underscoreHolder);
+    var correctArray = Array.from(thisWord);
     
     
-    var incorrectGuesses = -1;
+    
+    var chancesLeft = 10;
     var incrorrectArray = [];
     var wordsWon = [];
+    var incorrectGuesses = 0;
 
     document.onkeyup = function(event) {
         var userGuess = event.key;
         for (var i = 0; i < wordLength; i++){
             if (userGuess ===  wordArray[i]) {
                 underscoreArray[i] = wordArray[i];
+                console.log("Chances left to save chicken little: " + chancesLeft);
             }
         }
         if (wordArray.indexOf(userGuess) == -1) {
@@ -43,17 +47,24 @@
             console.log("Number of incorrect guesses: " + incorrectGuesses);
             incrorrectArray.push(userGuess);
             console.log("Incorrect guesses: " + incrorrectArray);
+            chancesLeft--;
+            console.log("Chances left to save chicken little: " + chancesLeft);
+           
         }
         var strArray = underscoreArray.join(" ");
         correctWord.textContent = strArray;
+
         
-        if (underscoreArray === wordArray) {
+        if (underscoreArray.includes("_")) {
+            
+        }
+        else {
             console.log("you won!");
             wordsWon.push(thisWord);
             console.log(wordsWon);
         }
-        var chancesLeft = 10 - incorrectGuesses;
-        console.log("Chances left to save chicken little: " + chancesLeft);
+        
+        
     }
 
 
