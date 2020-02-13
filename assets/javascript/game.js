@@ -27,24 +27,37 @@
         for (var i = 0; i < wordLength; i++) {
             numUnderscores.push("_"); 
             }
-        var strUnderscores = numUnderscores.join(" ");
-        return strUnderscores;
+        // var strUnderscores = numUnderscores.join("");
+        // return strUnderscores;
+        return numUnderscores;
     }
+
+    var underscoreHolder = underscores();
+
+    var wordArray = Array.from(thisWord);
+    var underscoreArray = Array.from(underscoreHolder);
+    console.log(underscoreArray);
     
-    var num = underscores();
-    correctWord.textContent = num;
-    var partialWord = correctWord.textContent;
+    
+    
+    // correctWord.textContent = num;
 
     document.onkeyup = function(event) {
         var userGuess = event.key;
-        // for (var i = 0; i < wordLength; i++){
-            var part1 = partialWord.substr(0,3);
-            var part2 = partialWord.substring(3, partialWord.length-2);
-            if (userGuess ===  thisWord.charAt(2)) {
-                    partialWord = part1 + " " + thisWord.charAt(2) + " " + part2;
+        // for (var i = 0; i < wordLength; i++) {
+        //         numUnderscores.push("_"); 
+        //     }
+        for (var i = 0; i < wordLength; i++){
+            if (userGuess ===  wordArray[i]) {
+               underscoreArray[i] = wordArray[i];
+               console.log(underscoreArray);
             }
-            console.log(partialWord);
-        // }
+            // else {
+            //     wordArray[i] = " _ ";
+            //     console.log(wordArray);
+            // }
+            
+        }
         // correctWord.textContent = partialWord;
     }
 
