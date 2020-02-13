@@ -43,7 +43,8 @@
                 underscoreArray[i] = wordArray[i];
             }
         }
-        correctWord.textContent = underscoreArray;
+        var strArray = underscoreArray.join(" ");
+        correctWord.textContent = strArray;
     }
 
 
