@@ -1,10 +1,3 @@
-    /* variable to hold user incorrect guesses */
- 
-    /* variable to hold number of wins */
-    var numWins = 0;
-    /* variable to hold number of chances to corectly guess */
-    var chancesLeft = 10;
-
     // HTML references
     var directions = document.getElementById("directions");
     var correctWord = document.getElementById("correct-word");
@@ -35,8 +28,10 @@
     
     
     var incorrectGuesses = -1;
-    
-    document.onkeydown = function(event) {
+    var incrorrectArray = [];
+    var wordsWon = [];
+
+    document.onkeyup = function(event) {
         var userGuess = event.key;
         for (var i = 0; i < wordLength; i++){
             if (userGuess ===  wordArray[i]) {
@@ -45,14 +40,21 @@
         }
         if (wordArray.indexOf(userGuess) == -1) {
             incorrectGuesses++;
-            console.log(incorrectGuesses);
+            console.log("Number of incorrect guesses: " + incorrectGuesses);
+            incrorrectArray.push(userGuess);
+            console.log("Incorrect guesses: " + incrorrectArray);
         }
         var strArray = underscoreArray.join(" ");
         correctWord.textContent = strArray;
+        
+        if (underscoreArray === wordArray) {
+            console.log("you won!");
+            wordsWon.push(thisWord);
+            console.log(wordsWon);
+        }
+        var chancesLeft = 10 - incorrectGuesses;
+        console.log("Chances left to save chicken little: " + chancesLeft);
     }
 
-
-    
-    
 
 
