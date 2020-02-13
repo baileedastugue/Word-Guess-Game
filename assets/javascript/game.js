@@ -34,14 +34,18 @@
     var underscoreArray = Array.from(underscoreHolder);
     
     
+    var incorrectGuesses = -1;
     
-    
-    document.onkeyup = function(event) {
+    document.onkeydown = function(event) {
         var userGuess = event.key;
         for (var i = 0; i < wordLength; i++){
             if (userGuess ===  wordArray[i]) {
                 underscoreArray[i] = wordArray[i];
             }
+        }
+        if (wordArray.indexOf(userGuess) == -1) {
+            incorrectGuesses++;
+            console.log(incorrectGuesses);
         }
         var strArray = underscoreArray.join(" ");
         correctWord.textContent = strArray;
