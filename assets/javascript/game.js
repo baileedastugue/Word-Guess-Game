@@ -31,42 +31,46 @@
     guessesLeft.textContent = ("Chances left to save chicken little: " + 10);
     
     var chancesLeft = 10;
-    var incrorrectArray = [];
+    var toPlay = [];
+    var guessedArray = [];
     var wordsWon = [];
 
     document.onkeyup = function(event) {
         var userGuess = event.key;
-        for (var i = 0; i < wordLength; i++){
-            if (userGuess ===  wordArray[i]) {
-                underscoreArray[i] = wordArray[i];
-                chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
+        toPlay.push(userGuess);
+        if (toPlay.includes("Enter")){
+            for (var i = 0; i < wordLength; i++){
+                if (userGuess ===  wordArray[i]) {
+                    underscoreArray[i] = wordArray[i];
+                    chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
+                }
+            }
+            if (wordArray.indexOf(userGuess) == -1) {
+                guessedArray.push(userGuess);
+                notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
+                chancesLeft--;
+                guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
+            }
+            // updates underscores on page to reflect key strokes
+            var strArray = underscoreArray.join(" ");
+            correctWord.textContent = strArray;
+
+            // tests whether all letters have been guessed
+            if (underscoreArray.includes("_")) {
+            }
+            // if all letters have been guessed,
+            // alerts user, includes words in Words Guessed section
+            else {
+                alert("you won!");
+                wordsWon.push(thisWord);
+                wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon;
+                return false;
+            }
+            if (chancesLeft === 0) {
+                alert("you lost, press 'enter' to try again");
+                return false;
             }
         }
-        if (wordArray.indexOf(userGuess) == -1) {
-            incrorrectArray.push(userGuess);
-            notInWord.textContent = "Letters that do not appear in the word: " + incrorrectArray.join(", ");
-            chancesLeft--;
-            guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
-           
-        }
-        // updates underscores on page to reflect key strokes
-        var strArray = underscoreArray.join(" ");
-        correctWord.textContent = strArray;
-
-        // tests whether all letters have been guessed
-        if (underscoreArray.includes("_")) {
-        }
-        // if all letters have been guessed,
-        // alerts user, includes words in Words Guessed section
-        else {
-            alert("you won!");
-            wordsWon.push(thisWord);
-            wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon;
-        }
-        if (chancesLeft === 0) {
-            alert("you lost, press 'enter' to try again");
-        }
     }
-
 
 
