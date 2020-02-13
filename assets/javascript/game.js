@@ -63,6 +63,9 @@
             wordsWon.push(thisWord);
             wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon;
         }
+        if (chancesLeft === 0) {
+            alert("you lost, press 'enter' to try again");
+        }
     }
 
 
