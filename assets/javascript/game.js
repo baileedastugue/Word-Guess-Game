@@ -45,11 +45,12 @@
                     chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
                 }
             }
-            if (wordArray.indexOf(userGuess) == -1 && userGuess != "Enter") {
-                guessedArray.push(userGuess);
-                notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
-                chancesLeft--;
-                guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
+            if (wordArray.indexOf(userGuess) == -1 && userGuess != "Enter" 
+                    && userGuess != "Escape" && guessedArray.indexOf(userGuess) == -1) {
+                    guessedArray.push(userGuess);
+                    notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
+                    chancesLeft--;
+                    guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
             }
             // updates underscores on page to reflect key strokes
             var strArray = underscoreArray.join(" ");
