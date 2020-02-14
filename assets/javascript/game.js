@@ -30,7 +30,7 @@
     
     guessesLeft.textContent = ("Chances left to save chicken little: " + 10);
     
-    var chancesLeft = 10;
+    var chancesLeft = 11;
     var toPlay = [];
     var guessedArray = [];
     var wordsWon = [];
@@ -45,7 +45,7 @@
                     chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
                 }
             }
-            if (wordArray.indexOf(userGuess) == -1) {
+            if (wordArray.indexOf(userGuess) == -1 && userGuess != "Enter") {
                 guessedArray.push(userGuess);
                 notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
                 chancesLeft--;
@@ -64,11 +64,11 @@
                 alert("you won!");
                 wordsWon.push(thisWord);
                 wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon;
-                return false;
+                return;
             }
             if (chancesLeft === 0) {
                 alert("you lost, press 'enter' to try again");
-                return false;
+                return;
             }
         }
     }
