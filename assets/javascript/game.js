@@ -30,8 +30,8 @@
 
     // }
 
-    var underscoreHolder = underscores();
-    var underscoreArray = Array.from(underscoreHolder);
+ 
+    var underscoreArray = underscores();
 
     var wordArray = Array.from(thisWord);
     
