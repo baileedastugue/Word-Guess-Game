@@ -13,15 +13,22 @@
     // stores the length of the chosen word 
     var wordLength = thisWord.length;
 
-    // creates an empty array for the number of underscores
-    var numUnderscores = [];
+    
     // fills underscore array with the length of the word 
     function underscores () {
+        // creates an empty array for the number of underscores
+        var numUnderscores = [];
         for (var i = 0; i < wordLength; i++) {
             numUnderscores.push("_"); 
-            }
+        }
         return numUnderscores;
     }
+
+    // Take your setup code (code that selects your word, creates your initial underscore and word arrays, and move it into a function)
+
+    // function resetGame() {
+
+    // }
 
     var underscoreHolder = underscores();
     var underscoreArray = Array.from(underscoreHolder);
@@ -31,22 +38,31 @@
     guessesLeft.textContent = ("Chances left to save chicken little: " + 10);
     
     var chancesLeft = 11;
-    var toPlay = [];
     var guessedArray = [];
     var wordsWon = [];
+    var gameStarted = false;
 
     document.onkeyup = function(event) {
         var userGuess = event.key;
-        toPlay.push(userGuess);
-        if (toPlay.includes("Enter")){
+       
+
+
+        if (userGuess === "Enter") {
+            gameStarted = true;
+        }
+
+        if (gameStarted) {
+
             for (var i = 0; i < wordLength; i++){
                 if (userGuess ===  wordArray[i]) {
                     underscoreArray[i] = wordArray[i];
                     chancesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
                 }
             }
-            if (wordArray.indexOf(userGuess) == -1 && userGuess != "Enter" 
-                    && userGuess != "Escape" && guessedArray.indexOf(userGuess) == -1) {
+            if (wordArray.indexOf(userGuess) == -1
+                    && userGuess != "Enter" 
+                    && userGuess != "Escape" && 
+                    guessedArray.indexOf(userGuess) == -1) {
                     guessedArray.push(userGuess);
                     notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
                     chancesLeft--;
