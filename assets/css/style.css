@@ -1,8 +1,23 @@
-p {
+* {
+    box-sizing: border-box;
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.4em;
-}
+  }
 
 h1 {
     font-family: 'Bungee Shade', cursive;
+}
+
+.warning {
+    color: tomato;
+    /* font-family: 'Bungee', cursive; */
+    font-style: oblique;
+    font-weight: bold;  
+    font-variant: small-caps;
+    font-size: 1.5em;  
+}
+
+#correct-word {
+    font-family: 'Bungee', cursive;
+    letter-spacing: .5em;
 }

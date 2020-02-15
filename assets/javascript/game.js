@@ -46,20 +46,6 @@
         guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
     }
 
-    // function resetGame () {
-        
-    //     // guessingWord = pickWord();
-    //     // underscoreArray = underscores();
-    //     // console.log(underscoreArray)
-    //     // wordLength = guessingWord.length;
-    //     // wordArray = Array.from(guessingWord);
-    //     // chancesLeft = 5;
-    //     // guessedArray = [];  
-    //     // guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
-    //     // notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
-    //     // return guessedArray;
-    // }
-
     function checkForCorrectGuess () {
         for (var i = 0; i < wordLength; i++){
             if (userGuess ===  wordArray[i]) {
