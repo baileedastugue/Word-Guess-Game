@@ -9,6 +9,13 @@
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix"];
     var wordsWon = [];
     var gameStarted = false;
+    var userGuess = "";
+    var guessingWord = "";
+    var wordLength = "";
+    var wordArray = [];
+    var notFirstGame = false;
+    var underscoreArray = [];
+
 
     // Take your setup code (code that selects your word, creates your initial underscore and word arrays, and move it into a function)
     function pickWord () {
@@ -16,14 +23,8 @@
         // stores the length of the chosen word 
         return thisWord;
     } 
+    
 
-    var guessingWord = pickWord();
-    var wordLength = guessingWord.length;
-    var wordArray = Array.from(guessingWord);
-    console.log(wordArray);
-    var chancesLeft = 5;
-    var guessedArray = [];
-    var notFirstGame = false;
 
     // fills underscore array with the length of the word 
     function underscores () {
@@ -35,20 +36,29 @@
         return numUnderscores;
     }
 
-    var underscoreArray = underscores();
-    console.log(underscoreArray);
-    var userGuess;
-
-    function resetGame () {
-        pickWord();
-        correctWord.textContent = strArray;
-        gameStarted = false;
+    function gameSetUp (){
+        guessingWord = pickWord();
+        wordLength = guessingWord.length;
+        underscoreArray = underscores();
+        wordArray = Array.from(guessingWord);
         chancesLeft = 5;
-        guessedArray = [];  
-        guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
-        notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
-        return guessedArray;
+        guessedArray = [];
+        guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
     }
+
+    // function resetGame () {
+        
+    //     // guessingWord = pickWord();
+    //     // underscoreArray = underscores();
+    //     // console.log(underscoreArray)
+    //     // wordLength = guessingWord.length;
+    //     // wordArray = Array.from(guessingWord);
+    //     // chancesLeft = 5;
+    //     // guessedArray = [];  
+    //     // guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
+    //     // notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
+    //     // return guessedArray;
+    // }
 
     function checkForCorrectGuess () {
         for (var i = 0; i < wordLength; i++){
@@ -79,24 +89,29 @@
         // if all letters have been guessed,
         // alerts user, includes words in Words Guessed section
         else {
-            alert("you won!");
             wordsWon.push(guessingWord);
             wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon.join(", ");
-            notFirstGame 
+            alert("you won! Press 'enter' to play again");
+            // if (userGuess === "Enter") {
+                notFirstGame = true;
+                gameSetUp();
+            // }
         }
         if (chancesLeft === 0) {
             alert("you lost, press 'enter' to try again");
-            if (userGuess === "Enter") {
-            notFirstGame = true;
-            resetGame();
-            }
+            // if (userGuess === "Enter") {
+                notFirstGame = true;
+                gameSetUp();
+            // }
         }
     };
 
+    gameSetUp();
     document.onkeyup = function (event) {
         userGuess = event.key;
-
+        // userGuess = userGuess.toLowerCase();
         if (userGuess === "Enter") {
+            
             gameStarted = true;
             correctWord.textContent = underscoreArray.join(" ");
         }
