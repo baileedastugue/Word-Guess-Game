@@ -43,6 +43,7 @@
         wordArray = Array.from(guessingWord);
         chancesLeft = 5;
         guessedArray = [];
+        notInWord.textContent = "Guessed Letters: " 
         guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
     }
 
