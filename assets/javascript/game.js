@@ -76,6 +76,12 @@
             if (chancesLeft === 5){
                 background.style.backgroundImage = "url('assets/images/background5.png')";
             }
+            if (chancesLeft === 4){
+                background.style.backgroundImage = "url('assets/images/background6.png')";
+            }
+            if (chancesLeft === 3){
+                background.style.backgroundImage = "url('assets/images/background7.png')";
+            }
     }
 
     function checkforWrongGuess () {
