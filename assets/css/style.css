@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 
 #game-branding {
@@ -37,14 +37,6 @@ img#second-chicken {
 img#first-chicken {
     z-index: 100;
 }
-/* 
-img#background1 {
-    z-index: 0;
-    width: 900px;
-    height: 700px;
-    bottom: -800px;
-    left: 0px;
-} */
 
 #word-bubble {
     display: none;
