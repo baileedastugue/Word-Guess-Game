@@ -62,12 +62,16 @@
 
     function changeBackground () {
         for (var i = 9; i > 0; i--){
+            
             if (chancesLeft === 9){
             background.style.backgroundImage = "url('assets/images/background1.png')";
             }
             if (chancesLeft === 8){
                 background.style.backgroundImage = "url('assets/images/background2.png')";
-                }
+            }
+            if (chancesLeft === 7){
+                background.style.backgroundImage = "url('assets/images/background3.png')";
+            }
         }
     }
 
