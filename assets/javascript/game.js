@@ -104,6 +104,7 @@
             
             gameStarted = true;
             wordBubble.style.display='block';
+            document.getElementById("second-chicken").style.display="block";
             correctWord.textContent = underscoreArray.join(" ");
         }
         if (gameStarted || notFirstGame) {
