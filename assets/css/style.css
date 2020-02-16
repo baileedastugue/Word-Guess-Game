@@ -18,11 +18,12 @@ img {
     height: 400px;
     position: relative;
     top: 100px;
-    left: 250px;    
+    left: 250px; 
 }
 
 #game-space {
     height: 500px;
+    overflow: hidden;
 }
 
 #word-bubble {
@@ -32,15 +33,15 @@ img {
     top: -100px;
     left: 400px;
     height: 300px;
-    overflow: hidden;
 
 }
 
 #correct-word {
     position: absolute;
-    right: 0%; 
+    right: 10px; 
     width: 400px;
     top: 50px;
+    text-align: center;
     /* border: 10px solid firebrick; */
 }
 
