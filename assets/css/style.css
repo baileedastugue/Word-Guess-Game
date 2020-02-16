@@ -7,6 +7,7 @@
 #game-branding {
     font-family: 'Bungee Shade', cursive;
     color: black;
+    font-size: 2em;
 }
 
 a:hover#game-branding {
@@ -14,9 +15,10 @@ a:hover#game-branding {
 } 
 
 img {
-    height: 300px;
+    height: 400px;
     position: relative;
-    bottom: 0px;
+    top: 100px;
+    left: 200px;    
 }
 
 #game-space {
@@ -26,7 +28,7 @@ img {
 #correct-word {
     position: absolute;
     right: 0%; 
-    width: 500px;
+    width: fit-content;
 }
 
 #background {

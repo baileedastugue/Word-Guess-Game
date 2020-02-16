@@ -43,7 +43,7 @@
         wordLength = guessingWord.length;
         underscoreArray = underscores();
         wordArray = Array.from(guessingWord);
-        chancesLeft = 5;
+        chancesLeft = 10;
         guessedArray = [];
         notInWord.textContent = "Guessed Letters: " 
         guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
