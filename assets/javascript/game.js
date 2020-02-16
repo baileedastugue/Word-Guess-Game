@@ -60,9 +60,7 @@
         }       
     };
 
-    function changeBackground () {
-        for (var i = 9; i > 0; i--){
-            
+    function changeBackground () {    
             if (chancesLeft === 9){
             background.style.backgroundImage = "url('assets/images/background1.png')";
             }
@@ -72,7 +70,12 @@
             if (chancesLeft === 7){
                 background.style.backgroundImage = "url('assets/images/background3.png')";
             }
-        }
+            if (chancesLeft === 6){
+                background.style.backgroundImage = "url('assets/images/background4.png')";
+            }
+            if (chancesLeft === 5){
+                background.style.backgroundImage = "url('assets/images/background5.png')";
+            }
     }
 
     function checkforWrongGuess () {
