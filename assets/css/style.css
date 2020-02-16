@@ -6,8 +6,8 @@
 
 #game-branding {
     font-family: 'Bungee Shade', cursive;
-    color: black;
-    font-size: 1.7em;
+    font-size: 2em;
+    color: #FDE34D
 }
 
 a:hover#game-branding {
@@ -60,7 +60,11 @@ img {
 }
 
 .navbar {
-    background-color: white;
+    background-color: black;
+}
+
+.navbar-brand {
+    margin-left: 10%;
 }
 
 .container {
