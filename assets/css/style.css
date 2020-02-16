@@ -14,33 +14,37 @@ a:hover#game-branding {
     color: tomato;
 } 
 
-img {
+img.chicken {
     height: 400px;
     position: relative;
     top: 300px;
     left: 250px;
 }
 
-.container #game-space {
+#game-space {
     height: 700px;
+    width: 900px;
     overflow: hidden;
-    background-image: url("../images/background.png");
     background-size: 110%;
-    /* margin: 10px 0px 0px 5px; */
+    background-image: url("../images/background.png");
 }
 
-#second-chicken {
+img#second-chicken {
     display: none;
-    z-index: 9;
+    z-index: 100;
 }
 
-#first-chicken {
-    z-index: 9;
+img#first-chicken {
+    z-index: 100;
 }
-
-#background1 {
-    z-index: 2;
-}
+/* 
+img#background1 {
+    z-index: 0;
+    width: 900px;
+    height: 700px;
+    bottom: -800px;
+    left: 0px;
+} */
 
 #word-bubble {
     display: none;
@@ -65,7 +69,7 @@ img {
     width: 400px;
     top: 250px;
     text-align: center;
-    /* border: 10px solid firebrick; */
+    z-index: 10;
 }
 
 #directions {

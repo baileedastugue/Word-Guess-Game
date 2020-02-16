@@ -5,6 +5,7 @@
     var wordsGuessed = document.getElementById("words-guessed");
     var notInWord = document.getElementById("not-in-word");
     var wordBubble = document.getElementById("word-bubble");
+    var background = document.getElementById("game-space");
     
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix", "pajamas",
@@ -59,6 +60,17 @@
         }       
     };
 
+    function changeBackground () {
+        for (var i = 9; i > 0; i--){
+            if (chancesLeft === 9){
+            background.style.backgroundImage = "url('assets/images/background1.png')";
+            }
+            if (chancesLeft === 8){
+                background.style.backgroundImage = "url('assets/images/background2.png')";
+                }
+        }
+    }
+
     function checkforWrongGuess () {
         for (var i = 0; i < wordLength; i++){
             if (wordArray.indexOf(userGuess) == -1
@@ -68,6 +80,7 @@
                     guessedArray.push(userGuess);
                     notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
                     chancesLeft--;
+                    changeBackground();
                     guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
             }
         }
