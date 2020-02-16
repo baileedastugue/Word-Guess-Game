@@ -85,6 +85,17 @@
             if (chancesLeft === 2){
                 background.style.backgroundImage = "url('assets/images/background8.png')";
             }
+            if (chancesLeft === 1){
+                background.style.backgroundImage = "url('assets/images/background9.png')";
+            }
+            if (chancesLeft === 0){
+                wordBubble.style.display='none';
+                document.getElementById("second-chicken").style.display="none";
+                document.getElementById("first-chicken").style.display="none";
+                background.style.backgroundImage = "url('assets/images/background10.png')";
+                
+
+            }
     }
 
     function checkforWrongGuess () {
