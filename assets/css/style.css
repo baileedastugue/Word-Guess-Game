@@ -13,6 +13,10 @@ a:hover#game-branding {
     color: tomato;
 } 
 
+img {
+    height: 300px;
+}
+
 .warning {
     color: tomato;
     /* font-family: 'Bungee', cursive; */
