@@ -13,50 +13,52 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#" id="game-branding">
-            Guess the right word, <br>save the chicken
-        </a>
-    </nav>
+    <div id="background">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#" id="game-branding">
+                Guess the right word, <br>save the chicken
+            </a>
+        </nav>
 
     <!-- <h4>His sky really is falling</h4> -->
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h2 id="correct-word">
+                        Press 'enter' to get started!
+                    </h2>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <h2 id="correct-word">
-                    Press 'enter' to get started!
-                </h2>
-
-                <img src="assets/images/Chicken1.png">
-                <img src="assets/images/Chicken2.png">
+                    <img src="assets/images/Chicken1.png">
+                    <img src="assets/images/Chicken2.png">
+                </div>
+                <div class="col-4">
+                    <p id="directions">
+                        Rules: <br>
+                            1. Letter-by-letter, guess the word Chicken Little is trying to communicate to you <br>
+                            2. For each wrong guess, the sky starts to fall<br>
+                            3. Correctly guess all the letters in Chicken Little's word to save him from the sky! <br>
+                                <span class="warning">Warning: you only have 5 chances to help him </span><br>
+                            4. Letters that appear in the word will in the green box, while incorrect guesses will appear in the red box <br>
+                    </p>
+                </div>
             </div>
-            <div class="col-4">
-                <p id="directions">
-                    Rules: <br>
-                        1. Letter-by-letter, guess the word Chicken Little is trying to communicate to you <br>
-                        2. For each wrong guess, the sky starts to fall<br>
-                        3. Correctly guess all the letters in Chicken Little's word to save him from the sky! <br>
-                            <span class="warning">Warning: you only have 5 chances to help him </span><br>
-                        4. Letters that appear in the word will in the green box, while incorrect guesses will appear in the red box <br>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <p id="not-in-word">
-                    Letters that do not appear in the word:
-                </p>
-            </div>
-            <div class="col-4">
-                <p id="words-guessed">
-                    Words you've successfully guessed:
-                </p>
-            </div>
-            <div class="col-4">
-                <p id="guesses-left">
-                    Number of guesses left:
-                </p>
+            <div class="row">
+                <div class="col-4">
+                    <p id="not-in-word">
+                        Letters that do not appear in the word:
+                    </p>
+                </div>
+                <div class="col-4">
+                    <p id="words-guessed">
+                        Words you've successfully guessed:
+                    </p>
+                </div>
+                <div class="col-4">
+                    <p id="guesses-left">
+                        Number of guesses left:
+                    </p>
+                </div>
             </div>
         </div>
     </div>

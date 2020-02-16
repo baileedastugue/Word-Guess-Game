@@ -17,6 +17,19 @@ img {
     height: 300px;
 }
 
+#background {
+    background-color: black;
+    height: 100%;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.container {
+    background-color: white;
+}
+
 .warning {
     color: tomato;
     /* font-family: 'Bungee', cursive; */
