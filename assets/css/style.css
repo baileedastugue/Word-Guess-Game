@@ -15,6 +15,18 @@ a:hover#game-branding {
 
 img {
     height: 300px;
+    position: relative;
+    bottom: 0px;
+}
+
+#game-space {
+    height: 500px;
+}
+
+#correct-word {
+    position: absolute;
+    right: 0%; 
+    width: 500px;
 }
 
 #background {
@@ -41,5 +53,5 @@ img {
 
 #correct-word {
     font-family: 'Bungee', cursive;
-    letter-spacing: .5em;
+    letter-spacing: .3em;
 }
