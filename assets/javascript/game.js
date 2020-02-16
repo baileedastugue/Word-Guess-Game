@@ -4,6 +4,7 @@
     var guessesLeft = document.getElementById("guesses-left");
     var wordsGuessed = document.getElementById("words-guessed");
     var notInWord = document.getElementById("not-in-word");
+    var wordBubble = document.getElementById("word-bubble");
     
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix", "pajamas",
@@ -102,6 +103,7 @@
         if (userGuess === "Enter") {
             
             gameStarted = true;
+            wordBubble.style.display='block';
             correctWord.textContent = underscoreArray.join(" ");
         }
         if (gameStarted || notFirstGame) {

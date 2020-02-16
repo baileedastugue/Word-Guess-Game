@@ -18,17 +18,35 @@ img {
     height: 400px;
     position: relative;
     top: 100px;
-    left: 200px;    
+    left: 250px;    
 }
 
 #game-space {
     height: 500px;
 }
 
+#word-bubble {
+    display: none;
+    width: 500px;
+    position: absolute;
+    top: -100px;
+    left: 400px;
+    height: 300px;
+    overflow: hidden;
+
+}
+
 #correct-word {
     position: absolute;
     right: 0%; 
-    width: fit-content;
+    width: 400px;
+    top: 50px;
+    /* border: 10px solid firebrick; */
+}
+
+#directions {
+    border: 10px dotted #FDE34D;
+    margin: 20px 0px;
 }
 
 #background {
@@ -55,5 +73,5 @@ img {
 
 #correct-word {
     font-family: 'Bungee', cursive;
-    letter-spacing: .3em;
+    letter-spacing: .2em;
 }
