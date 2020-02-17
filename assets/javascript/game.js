@@ -10,7 +10,8 @@
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix", "pajamas",
                         "coffee", "help", "alligator", "threat", "bee", "horizon", "forest",
-                        "friend", "progress", "evening", "captain", "televsion", "record", "predict"];
+                        "friend", "progress", "evening", "captain", "television", "record", "predict", "slippers",
+                        "feathers", "cowboy", "tacos", "ouch", "blanket", "sunset"];
     var wordsWon = [];
     var gameStarted = false;
     var userGuess = "";
