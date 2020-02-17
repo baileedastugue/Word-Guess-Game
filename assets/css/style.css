@@ -32,10 +32,20 @@ img.chicken {
 
 #final-loss {
     display: none;
+    position: absolute;
+    width: 300px;
+    top: 380px;
+    right: 435px; 
+    text-align: center;
+    line-height: 0.3em;
+    transform-origin: 0 0;
+    transform: rotate(340deg);
+}
+
+#final-loss h2 {
     font-family: 'Bungee Shade', cursive;
     color: black;
     font-size: 4em;
-    bottom: 400;
 }
 
 img#second-chicken {
@@ -97,7 +107,6 @@ img#first-chicken {
 
 .warning {
     color: tomato;
-    /* font-family: 'Bungee', cursive; */
     font-style: oblique;
     font-weight: bold;  
     font-variant: small-caps;
