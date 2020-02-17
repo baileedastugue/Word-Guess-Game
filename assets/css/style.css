@@ -30,6 +30,14 @@ img.chicken {
     
 }
 
+#final-loss {
+    display: none;
+    font-family: 'Bungee Shade', cursive;
+    color: black;
+    font-size: 4em;
+    bottom: 400;
+}
+
 img#second-chicken {
     display: none;
     z-index: 10;

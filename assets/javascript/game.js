@@ -42,6 +42,9 @@
 
     function gameSetUp (){
         guessingWord = pickWord();
+        background.style.backgroundImage = "url('assets/images/background.png')";
+        document.getElementById("final-loss").style.display="none"; 
+        document.getElementById("second-chicken").style.display="block";  
         wordLength = guessingWord.length;
         underscoreArray = underscores();
         wordArray = Array.from(guessingWord);
@@ -56,6 +59,7 @@
             if (userGuess ===  wordArray[i]) {
                 underscoreArray[i] = wordArray[i];
                 correctWord.textContent = underscoreArray.join(" ");
+                changeBackground();
             }
         }       
     };
@@ -88,13 +92,14 @@
             if (chancesLeft === 1){
                 background.style.backgroundImage = "url('assets/images/background9.png')";
             }
-            if (chancesLeft === 0){
+            if (chancesLeft === 0) {
                 wordBubble.style.display='none';
                 document.getElementById("second-chicken").style.display="none";
                 document.getElementById("first-chicken").style.display="none";
                 background.style.backgroundImage = "url('assets/images/background10.png')";
-                
-
+                document.getElementById("final-loss").style.display="block";
+                alert("you lost, press 'enter' to try again");
+                notFirstGame = true;
             }
     }
 
@@ -114,6 +119,7 @@
     };
 
     function winOrLose () {
+        changeBackground();
         if (underscoreArray.includes("_")) {
         }
         // if all letters have been guessed,
@@ -121,33 +127,27 @@
         else {
             wordsWon.push(guessingWord);
             wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon.join(", ");
-            alert("you won! Press 'enter' to play again");
-            // if (userGuess === "Enter") {
-                notFirstGame = true;
-                gameSetUp();
-            // }
-        }
-        if (chancesLeft === 0) {
-            alert("you lost, press 'enter' to try again");
-            // if (userGuess === "Enter") {
-                notFirstGame = true;
-                gameSetUp();
-            // }
+            alert("you won! Press 'enter' to play again")  
         }
     };
 
-    gameSetUp();
+  
     document.onkeyup = function (event) {
         userGuess = event.key;
         // userGuess = userGuess.toLowerCase();
         if (userGuess === "Enter") {
-            
+            gameSetUp();
             gameStarted = true;
-            wordBubble.style.display='block';
-            document.getElementById("second-chicken").style.display="block";
             correctWord.textContent = underscoreArray.join(" ");
         }
+        // if (notFirstGame) {
+        //     document.getElementById("second-chicken").style.display="block";
+        //     document.getElementById("first-chicken").style.display="block";
+        //     background.style.backgroundImage = "url('assets/images/background.png')"
+        //     gameSetUp();
+        // }
         if (gameStarted || notFirstGame) {
+        wordBubble.style.display='block';
         checkForCorrectGuess();
         checkforWrongGuess();
         winOrLose();
