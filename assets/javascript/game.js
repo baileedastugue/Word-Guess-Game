@@ -99,7 +99,7 @@
                 document.getElementById("first-chicken").style.display="none";
                 background.style.backgroundImage = "url('assets/images/background10.png')";
                 document.getElementById("final-loss").style.display="block";
-                alert("You couldn't save Chicken Little - better luck next time!");
+                alert("You couldn't save Chicken Little - better try again!");
                 notFirstGame = true;
             }
     }
