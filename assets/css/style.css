@@ -28,6 +28,7 @@ img.chicken {
     background-size: 110%;
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
+    position: relative;
     
 }
 
@@ -56,6 +57,10 @@ img#second-chicken {
 
 img#first-chicken {
     z-index: 10;
+}
+
+.chicken {
+    position: absolute;
 }
 
 #word-bubble {

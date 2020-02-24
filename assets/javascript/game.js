@@ -6,6 +6,7 @@
     var notInWord = document.getElementById("not-in-word");
     var wordBubble = document.getElementById("word-bubble");
     var background = document.getElementById("game-space");
+
     
     // array of possible words to guess
     var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix", "pajamas",
@@ -29,8 +30,6 @@
         return thisWord;
     } 
     
-
-
     // fills underscore array with the length of the word 
     function underscores () {
         // creates an empty array for the number of underscores
@@ -45,7 +44,7 @@
         guessingWord = pickWord();
         background.style.backgroundImage = "url('assets/images/background.png')";
         document.getElementById("final-loss").style.display="none"; 
-        document.getElementById("second-chicken").style.display="block";  
+        document.getElementById("second-chicken").style.display="block"; 
         wordLength = guessingWord.length;
         underscoreArray = underscores();
         wordArray = Array.from(guessingWord);
@@ -108,6 +107,7 @@
         for (var i = 0; i < wordLength; i++){
             if (wordArray.indexOf(userGuess) == -1
                 && userGuess != "Enter" 
+                && userGuess.match(/^[a-zA-Z]*$/)
                 && userGuess != "Escape" && 
                 guessedArray.indexOf(userGuess) == -1) {
                     guessedArray.push(userGuess);
