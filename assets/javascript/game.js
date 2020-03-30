@@ -21,6 +21,7 @@
     var wordArray = [];
     var notFirstGame = false;
     var underscoreArray = [];
+    var backgroundImages = ['assets/images/background9.png', 'assets/images/background8.png','assets/images/background7.png', 'assets/images/background6.png','assets/images/background5.png','assets/images/background4.png','assets/images/background3.png','assets/images/background2.png', 'assets/images/background1.png']
 
 
     // Take your setup code (code that selects your word, creates your initial underscore and word arrays, and move it into a function)
@@ -64,35 +65,11 @@
         }       
     };
 
-    function changeBackground () {    
-            if (chancesLeft === 9){
-            background.style.backgroundImage = "url('assets/images/background1.png')";
-            }
-            if (chancesLeft === 8){
-                background.style.backgroundImage = "url('assets/images/background2.png')";
-            }
-            if (chancesLeft === 7){
-                background.style.backgroundImage = "url('assets/images/background3.png')";
-            }
-            if (chancesLeft === 6){
-                background.style.backgroundImage = "url('assets/images/background4.png')";
-            }
-            if (chancesLeft === 5){
-                background.style.backgroundImage = "url('assets/images/background5.png')";
-            }
-            if (chancesLeft === 4){
-                background.style.backgroundImage = "url('assets/images/background6.png')";
-            }
-            if (chancesLeft === 3){
-                background.style.backgroundImage = "url('assets/images/background7.png')";
-            }
-            if (chancesLeft === 2){
-                background.style.backgroundImage = "url('assets/images/background8.png')";
-            }
-            if (chancesLeft === 1){
-                background.style.backgroundImage = "url('assets/images/background9.png')";
-            }
-            if (chancesLeft === 0) {
+    function changeBackground () { 
+        for (var i = 0; i < backgroundImages.length; i++) {
+            i = chancesLeft;
+            background.style.backgroundImage = "url(" + backgroundImages[i] + ")";
+            if (i = 0) {
                 wordBubble.style.display='none';
                 document.getElementById("second-chicken").style.display="none";
                 document.getElementById("first-chicken").style.display="none";
@@ -101,6 +78,43 @@
                 alert("You couldn't save Chicken Little - better try again!");
                 notFirstGame = true;
             }
+        }   
+            // if (chancesLeft === 9){
+            // background.style.backgroundImage = "url('assets/images/background1.png')";
+            // }
+            // if (chancesLeft === 8){
+            //     background.style.backgroundImage = "url('assets/images/background2.png')";
+            // }
+            // if (chancesLeft === 7){
+            //     background.style.backgroundImage = "url('assets/images/background3.png')";
+            // }
+            // if (chancesLeft === 6){
+            //     background.style.backgroundImage = "url('assets/images/background4.png')";
+            // }
+            // if (chancesLeft === 5){
+            //     background.style.backgroundImage = "url('assets/images/background5.png')";
+            // }
+            // if (chancesLeft === 4){
+            //     background.style.backgroundImage = "url('assets/images/background6.png')";
+            // }
+            // if (chancesLeft === 3){
+            //     background.style.backgroundImage = "url('assets/images/background7.png')";
+            // }
+            // if (chancesLeft === 2){
+            //     background.style.backgroundImage = "url('assets/images/background8.png')";
+            // }
+            // if (chancesLeft === 1){
+            //     background.style.backgroundImage = "url('assets/images/background9.png')";
+            // }
+            // if (chancesLeft === 0) {
+            //     wordBubble.style.display='none';
+            //     document.getElementById("second-chicken").style.display="none";
+            //     document.getElementById("first-chicken").style.display="none";
+            //     background.style.backgroundImage = "url('assets/images/background10.png')";
+            //     document.getElementById("final-loss").style.display="block";
+            //     alert("You couldn't save Chicken Little - better try again!");
+            //     notFirstGame = true;
+            // }
     }
 
     function checkforWrongGuess () {
