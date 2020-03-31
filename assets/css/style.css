@@ -39,19 +39,20 @@ a:hover#game-branding {
 #final-loss {
     display: none;
     position: absolute;
-    width: 300px;
-    top: 380px;
-    right: 435px; 
+    max-width: 25vw;
+    top: 30vw;
+    right: 41vw; 
     text-align: center;
-    line-height: 0.3em;
+    /* line-height: 0.3em; */
     transform-origin: 0 0;
     transform: rotate(340deg);
+    font-size: 2.3vw;
 }
 
 #final-loss h2 {
     font-family: 'Bungee Shade', cursive;
     color: black;
-    font-size: 4em;
+    font-size: 5vw;
 }
 
 #game-status {
@@ -116,4 +117,10 @@ a:hover#game-branding {
     font-weight: bold;  
     font-variant: small-caps;
     font-size: 1.5em;  
+}
+
+@media (max-width: 992px) {
+    #final-loss {
+        top: 39vw;
+        right: 60vw;    
 }
