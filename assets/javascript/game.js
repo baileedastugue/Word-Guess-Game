@@ -21,12 +21,12 @@ var wordLength = "";
 var wordArray = [];
 var notFirstGame = false;
 var underscoreArray = [];
+var backgrounds = ['assets/images/background10.png', 'assets/images/background9.png', 'assets/images/background8.png', 'assets/images/background7.png', 'assets/images/background6.png', 'assets/images/background5.png', 'assets/images/background4.png', 'assets/images/background3.png', 'assets/images/background2.png', 'assets/images/background1.png', 'assets/images/background.png']; 
 
 
-// Take your setup code (code that selects your word, creates your initial underscore and word arrays, and move it into a function)
+// Setup code - randomly picks and returns a word
 function pickWord () {
     var thisWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
-    // stores the length of the chosen word 
     return thisWord;
 } 
 
@@ -35,23 +35,31 @@ function underscores () {
     // creates an empty array for the number of underscores
     var numUnderscores = [];
     for (var i = 0; i < wordLength; i++) {
-        numUnderscores.push("_"); 
+        numUnderscores.push("_");
     }
     return numUnderscores;
 }
 
 function gameSetUp (){
+    // guessing word is selected and stored in an array
     guessingWord = pickWord();
+    wordArray = Array.from(guessingWord);
+    wordLength = guessingWord.length;
+
+    // underscore array is created
+    underscoreArray = underscores();
+    
+    // chances left is set and empty guessed array is created
+    chancesLeft = 10;
+    guessedArray = [];
+
+    // sets up game play board
     background.style.backgroundImage = "url('assets/images/background.png')";
     document.getElementById("final-loss").style.display="none"; 
     document.getElementById("second-chicken").style.display="block"; 
-    wordLength = guessingWord.length;
-    underscoreArray = underscores();
-    wordArray = Array.from(guessingWord);
-    chancesLeft = 10;
-    guessedArray = [];
-    notInWord.textContent = "Guessed Letters: " 
-    guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
+    
+    // notInWord.textContent = "Guessed Letters: " 
+    // guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
 }
 
 function checkForCorrectGuess () {
@@ -64,55 +72,35 @@ function checkForCorrectGuess () {
     }       
 };
 
-function changeBackground () {    
-        if (chancesLeft === 9){
-        background.style.backgroundImage = "url('assets/images/background1.png')";
-        }
-        if (chancesLeft === 8){
-            background.style.backgroundImage = "url('assets/images/background2.png')";
-        }
-        if (chancesLeft === 7){
-            background.style.backgroundImage = "url('assets/images/background3.png')";
-        }
-        if (chancesLeft === 6){
-            background.style.backgroundImage = "url('assets/images/background4.png')";
-        }
-        if (chancesLeft === 5){
-            background.style.backgroundImage = "url('assets/images/background5.png')";
-        }
-        if (chancesLeft === 4){
-            background.style.backgroundImage = "url('assets/images/background6.png')";
-        }
-        if (chancesLeft === 3){
-            background.style.backgroundImage = "url('assets/images/background7.png')";
-        }
-        if (chancesLeft === 2){
-            background.style.backgroundImage = "url('assets/images/background8.png')";
-        }
-        if (chancesLeft === 1){
-            background.style.backgroundImage = "url('assets/images/background9.png')";
-        }
-        if (chancesLeft === 0) {
-            wordBubble.style.display='none';
-            document.getElementById("second-chicken").style.display="none";
-            document.getElementById("first-chicken").style.display="none";
-            background.style.backgroundImage = "url('assets/images/background10.png')";
-            document.getElementById("final-loss").style.display="block";
-            alert("You couldn't save Chicken Little - better try again!");
-            notFirstGame = true;
-        }
+function changeBackground () { 
+    if (chancesLeft > 0){   
+        background.style.backgroundImage = "url(" + backgrounds[chancesLeft] + ")";
+    }
+    if (chancesLeft === 0) {
+        wordBubble.style.display='none';
+        background.style.backgroundImage = "url(" + backgrounds[chancesLeft] + ")";
+        document.getElementById("second-chicken").style.display="none";
+        document.getElementById("first-chicken").style.display="none";
+        document.getElementById("final-loss").style.display="block";
+        notFirstGame = true;
+    }
+}
+
+function validGuess () {
+    if (userGuess.match(/^[a-zA-Z]*$/) ) {
+        var validGuess = true;
+        console.log(validGuess);
+    } 
 }
 
 function checkforWrongGuess () {
     for (var i = 0; i < wordLength; i++){
-        if (wordArray.indexOf(userGuess) == -1
-            && userGuess != "Enter" 
-            && userGuess.match(/^[a-zA-Z]*$/)
-            && userGuess != "Escape" && 
+        if (wordArray.indexOf(userGuess) === -1 && 
+            userGuess.match(/^[a-zA-Z]*$/) &&
             guessedArray.indexOf(userGuess) == -1) {
                 guessedArray.push(userGuess);
                 notInWord.textContent = "Guessed Letters: " + guessedArray.join(", ");
-                chancesLeft--;
+                chancesLeft--;   
                 changeBackground();
                 guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);
         }
@@ -128,29 +116,22 @@ function winOrLose () {
     else {
         wordsWon.push(guessingWord);
         wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon.join(", ");
-        alert("you won! Press 'enter' to play again")  
     }
 };
 
 
 document.onkeyup = function (event) {
     userGuess = event.key;
-    // userGuess = userGuess.toLowerCase();
     if (userGuess === "Enter") {
         gameSetUp();
         gameStarted = true;
         correctWord.textContent = underscoreArray.join(" ");
-    }
-    // if (notFirstGame) {
-    //     document.getElementById("second-chicken").style.display="block";
-    //     document.getElementById("first-chicken").style.display="block";
-    //     background.style.backgroundImage = "url('assets/images/background.png')"
-    //     gameSetUp();
-    // }
-    if (gameStarted || notFirstGame) {
-    wordBubble.style.display='block';
-    checkForCorrectGuess();
-    checkforWrongGuess();
-    winOrLose();
+    }   
+    else if (gameStarted) {
+        console.log(chancesLeft);    
+        wordBubble.style.display='block';
+        checkForCorrectGuess();
+        checkforWrongGuess();
+        winOrLose();
 }
 };
