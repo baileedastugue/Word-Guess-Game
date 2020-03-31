@@ -54,7 +54,7 @@ function gameSetUp (){
     guessedArray = [];
 
     // sets up game play board
-    document.getElementById("bg").src = "assets/images/bg1.png";
+    document.getElementById("bg").src = "assets/images/bg.png";
     document.getElementById("final-loss").style.display="none"; 
     
     notInWord.textContent = "Guessed Letters: " 
@@ -75,11 +75,10 @@ function changeBackground () {
     if (chancesLeft > 0){   
         document.getElementById("bg").src = backgrounds[chancesLeft];
     }
-    if (chancesLeft === 0) {
-        document.getElementById("bg").src = backgrounds[chancesLeft];
-        // document.getElementById("second-chicken").style.display="none";
-        // document.getElementById("first-chicken").style.display="none";
+    else {
+        document.getElementById("bg").src = backgrounds[0];
         document.getElementById("final-loss").style.display="block";
+        document.getElementById("correct-word").style.display="none";
         notFirstGame = true;
     }
 }
@@ -110,16 +109,30 @@ function winOrLose () {
     }
 };
 
+function adjustFont() {
+    document.getElementById("correct-word").classList.remove("small", "medium", "large");
+    if (wordLength <= 5) {
+        document.getElementById("correct-word").classList.add("small");
+    }
+    else if (wordLength <= 8) {
+        document.getElementById("correct-word").classList.add("medium");
+    }
+    else {
+        document.getElementById("correct-word").classList.add("large");
+    }
+}
+
 
 document.onkeyup = function (event) {
     userGuess = event.key;
     if (userGuess === "Enter") {
         gameSetUp();
+        adjustFont();
         gameStarted = true;
         correctWord.textContent = underscoreArray.join(" ");
     }   
     else if (gameStarted) {
-        console.log(chancesLeft);    
+        adjustFont();
         checkForCorrectGuess();
         checkforWrongGuess();
         winOrLose();

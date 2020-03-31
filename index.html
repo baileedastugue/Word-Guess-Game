@@ -12,15 +12,15 @@
     <title>Word-Guess Game</title>
 </head>
 
-<body>
-    <div id="background">
+<body id="background">
+    <div >
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="https://baileedastugue.github.io/Word-Guess-Game/" id="game-branding">
                 Save the chicken
             </a>
         </nav>
     
-        <div class="container">
+        <div class="container-fluid">
             
             <div class="row">
                 <div class="col-lg-9" id="game-space">
@@ -28,22 +28,22 @@
                     <img src="assets/images/bg.png" id="bg" class="img-fluid">
                     <div id="final-loss"><h2>Oof</h2> <h3>Press 'enter' to save me next time!</h3></div>
 
-                    <h2 id="correct-word">
-                        Press 'enter' to get started!
-                    </h2>
+                    <span id="correct-word">
+                        Press 'enter' <br>to play!
+                    </span>
 
                 </div>
                 <div class="col-lg-3">
-                    <div class="container">
-                        <div class="row">
-                            <p id="directions">
-                                Rules: <br>
+                    <div class="container-fluid">
+                        <div class="row" id="directions">
+                                <h4>Rules:</h4>
+                                <p>
                                     1. Letter-by-letter, guess the word Chicken Little is trying to communicate to you <br>
                                     2. For each wrong guess, the sky starts to fall<br>
                                     3. Correctly guess all the letters in Chicken Little's word to save him from the sky! <br>
                                         <span class="warning">Warning: you only have 10 chances to help him </span><br>
                                     4. Letters that appear in the word will in the green box, while incorrect guesses will appear in the red box <br>
-                            </p>
+                                </p>
                         </div>
                         <div class="row">
                             <div class="row" id="game-status">

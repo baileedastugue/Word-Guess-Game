@@ -4,6 +4,15 @@
     font-size: 1.5em;
   }
 
+p, h4 {
+    color: white;
+}
+
+h4 {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
 #game-branding {
     font-family: 'Bungee Shade', cursive;
     font-size: 2em;
@@ -18,7 +27,13 @@ a:hover#game-branding {
     overflow: hidden;
     background-repeat: no-repeat;
     position: relative;
-    
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+#bg {
+    position: relative;
 }
 
 #final-loss {
@@ -39,38 +54,40 @@ a:hover#game-branding {
     font-size: 4em;
 }
 
-img#second-chicken {
-    display: none;
-    z-index: 10;
-}
-
-img#first-chicken {
-    z-index: 10;
-}
-
-#word-bubble {
-    width: 30vw;
-    position: absolute;
-    top: 22%;
-    right: -5%;
-    height: 18vw;
-    z-index: 100;
-
-}
-
 #game-status {
     margin: 10px 0px;
     overflow: auto;
     line-height: 1em;
 }
 
+
+#correct-word.small {
+    font-size: 3.2vw;
+    left: 20%;
+    top: 44%;
+}
+
+#correct-word.medium {
+    font-size: 2.4vw;
+    left: 17%;
+    top: 45%;
+}
+
+#correct-word.large {
+    font-size: 1.9vw;
+    top: 46%;
+    left: 16%;
+}
+
 #correct-word {
     position: absolute;
-    right: 0%; 
-    width: 23vw;
-    top: 17vw;
+    left: 18%; 
+    max-width: 18vw;
+    top: 44%;
     text-align: center;
+    font-family: 'Bungee', cursive;
     z-index: 10;
+    font-size: 2vw;
 }
 
 #directions {
@@ -90,11 +107,7 @@ img#first-chicken {
 }
 
 .navbar-brand {
-    margin-left: 10%;
-}
-
-.container {
-    background-color: white;
+    margin-left: 5%;
 }
 
 .warning {
@@ -103,9 +116,4 @@ img#first-chicken {
     font-weight: bold;  
     font-variant: small-caps;
     font-size: 1.5em;  
-}
-
-#correct-word {
-    font-family: 'Bungee', cursive;
-    letter-spacing: .1em;
 }
