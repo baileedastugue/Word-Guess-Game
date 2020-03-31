@@ -92,7 +92,7 @@ a:hover#game-branding {
 }
 
 #directions {
-    max-height: 28vw;
+    max-height: 35vw;
     overflow: scroll;
     border: 10px dotted #FDE34D;
     margin: 20px 0px 0px 0px;

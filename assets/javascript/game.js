@@ -56,6 +56,7 @@ function gameSetUp (){
     // sets up game play board
     document.getElementById("bg").src = "assets/images/bg.png";
     document.getElementById("final-loss").style.display="none"; 
+    document.getElementById("correct-word").style.display="unset";
     
     notInWord.textContent = "Guessed Letters: " 
     guessesLeft.textContent = ("Chances left to save chicken little: " + chancesLeft);  
