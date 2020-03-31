@@ -9,8 +9,7 @@
 - Dynamically update various statistics throughout the game
 
 *Future developments:*
-- Remove all pop-ups
-- Greater responsiveness between the background, bubble, and chicken
+- alert the user when they have won
 
 *Skills utilized:*
 - JavaScript
