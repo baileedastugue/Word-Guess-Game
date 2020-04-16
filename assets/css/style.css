@@ -16,7 +16,7 @@ h4 {
 #game-branding {
     font-family: 'Bungee Shade', cursive;
     font-size: 2em;
-    color: #FDE34D
+    color: #FDE34D;
 }
 
 a:hover#game-branding {
@@ -39,6 +39,20 @@ a:hover#game-branding {
 
 #final-win {
     display: none;
+    z-index: 100;
+    position: absolute;
+    font-size: 1.7vw;
+    left: 13%;
+    top: 40%;
+    color: black;
+    text-align: center;
+}
+
+#final-win h2 {
+    font-family: 'Bungee Shade', cursive;
+    color: #FDE34D;
+    font-size: 3.8vw;
+    margin-bottom: 0px;
 }
 
 #final-loss {

@@ -55,6 +55,7 @@ function gameSetUp (){
     // sets up game play board
     document.getElementById("bg").src = "assets/images/bg.png";
     document.getElementById("final-loss").style.display="none"; 
+    document.getElementById("final-win").style.display="none"; 
     document.getElementById("correct-word").style.display="unset";
     
     notInWord.textContent = "Guessed Letters: " 
@@ -106,6 +107,7 @@ function winOrLose () {
     else {
         wordsWon.push(guessingWord);
         document.getElementById("final-win").style.display="block";
+        document.getElementById("correct-word").style.display="none";
         wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon.join(", ");
     }
 };
