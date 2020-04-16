@@ -13,15 +13,14 @@ var possibleWords = ["educate", "orange", "jack", "texas", "bellatrix", "pajamas
                     "coffee", "help", "alligator", "threat", "bee", "horizon", "forest",
                     "friend", "progress", "evening", "captain", "television", "record", "predict", "slippers",
                     "feathers", "cowboy", "tacos", "ouch", "blanket", "sunset"];
+var backgrounds = ['assets/images/background10.png', 'assets/images/bg9.png', 'assets/images/bg8.png', 'assets/images/bg7.png', 'assets/images/bg6.png', 'assets/images/bg5.png', 'assets/images/bg4.png', 'assets/images/bg3.png', 'assets/images/bg2.png', 'assets/images/bg1.png', 'assets/images/bg.png']; 
 var wordsWon = [];
-var gameStarted = false;
+var wordArray = [];
 var userGuess = "";
 var guessingWord = "";
 var wordLength = "";
-var wordArray = [];
+var gameStarted = false;
 var notFirstGame = false;
-var underscoreArray = [];
-var backgrounds = ['assets/images/background10.png', 'assets/images/bg9.png', 'assets/images/bg8.png', 'assets/images/bg7.png', 'assets/images/bg6.png', 'assets/images/bg5.png', 'assets/images/bg4.png', 'assets/images/bg3.png', 'assets/images/bg2.png', 'assets/images/bg1.png', 'assets/images/bg.png']; 
 
 
 // Setup code - randomly picks and returns a word
@@ -106,6 +105,7 @@ function winOrLose () {
     // alerts user, includes words in Words Guessed section
     else {
         wordsWon.push(guessingWord);
+        document.getElementById("final-win").style.display="block";
         wordsGuessed.textContent = "Words you've correctly guessed: " + wordsWon.join(", ");
     }
 };

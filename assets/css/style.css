@@ -36,6 +36,11 @@ a:hover#game-branding {
     position: relative;
 }
 
+
+#final-win {
+    display: none;
+}
+
 #final-loss {
     display: none;
     position: absolute;
